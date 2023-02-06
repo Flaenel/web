@@ -1,0 +1,137 @@
+body{
+    margin-left: 70px;
+    margin-right: 70px;
+}
+.header{
+    width: auto;
+    height: 76px;
+    justify-content: space-between;
+}
+.header_start{
+    align-items: center;
+    gap: 17px;
+}
+.header_end{
+    align-items: center;
+    gap: 20px;
+}
+
+.header_text{
+    font-family: 'Vibur';
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 72px;
+}
+
+.btnText{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 23px;
+    margin-right: 23px;
+}
+.btnSmall{
+    border-radius: 5px;
+}
+.whiteBtn{
+    outline: auto;
+    outline-color: #979797 ;
+}
+.blueBtn{
+    background-color: #3A5AFF;
+    border-bottom:solid #46178F 5px;
+}
+.loginfont{
+    font-weight: bold;
+    font-size: 16px;
+    color: #979797;   
+}
+.signupfont{
+    font-family: 'Poppins' ;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 350;
+}
+
+.main_content{
+    width: auto;
+    height: auto;
+    justify-content: center;
+}
+.left_zone{
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.right_zone{
+    align-items: center;
+}
+.downZone{
+    gap: 20px;
+}
+.downZoneText{
+    font-weight: bold;
+    font-size: 14px;
+}
+.mainBtn{
+    width: 255px;
+    height: 56px;
+    background-color: #3A5AFF;
+    border-radius: 5px;
+    justify-content: center;
+}
+.mainBtnText{
+    color: #fff;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.mainHeader{
+    font-size: 50px;
+    font-weight: bolder;
+}
+.mainText{
+    font-size: 24px;
+}
+/* Montserrat users */
+.mainHeader, .mainText, .mainBtnText, .downZoneText, .loginfont{
+    font-family: 'Montserrat';
+}
+/* Flex users */
+.header, .header_start, .header_end, .main_content, .left_zone, .right_zone, .downZone, .mainBtn{
+    display: flex;
+}
+
+/* medias */
+@media screen and (max-width: 1920px) {
+    .main_content{
+        gap: 340px;
+    }
+}
+@media screen and (max-width: 1400px) {
+    .main_content{
+        gap: 120px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .main_content{
+        gap: 60px;
+    }
+}
+@media screen and (max-width: 960px) {
+    .main_content{
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 0px;
+    }
+}
+@media screen and (max-width: 860px) {
+    .header{
+        flex-direction: column;
+        height: auto;
+    }
+}
+@media screen and (max-width: 520px) {
+    .header_end{
+        justify-content: space-evenly;
+    }
+}
