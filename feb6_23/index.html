@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+   <a href="#content" style="display: none;" id="aaa"></a>
+    <header class="header">
+        <div class="header_start">
+            <a href="" style="display: none;">
+                <span class="header_text">
+                    Test
+                </span>
+            </a>
+        </div>
+        <div class="header_center">
+
+        </div>
+        <div class="header_end">
+            <div class="sl_form">
+                <a href="#signin" class="btnlog headbtn">Log in</a>
+                <a href="#signup" class="btnreg headbtn">Sign up</a>
+            </div>
+            <div class="userinfo" style="display: none;">
+                <span class="userName"></span>
+                <a href="#" class="logout_btn">Log out</a>
+            </div>
+        </div>
+       
+    </header>
+    <div class="log_form">
+        <h1>Log in</h1>
+        <form action="">
+            <label for="inlog">Login:</label>
+            <input type="text" id="inlog" required placeholder="Log in"  pattern="^[а-яёА-ЯЁ ]+">
+            <br>
+            <label for="inpass">Password: </label>
+            <input type="text" id="inpass" required placeholder="Password" pattern="[^ $%&#]+">
+            <br>
+            <input type="button" value="Log in" class="log_frmbut">
+            
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+
+    <div class="reg_form">
+        <h1>Sign up</h1>
+        <form action="">
+            <label for="inreg">Login:</label>
+            <input type="text" id="inreg" required placeholder="Log in"  pattern="^[а-яёА-ЯЁ ]+">
+            <br>
+            <label for="inregpass">Password: </label>
+            <input type="text" id="inregpass" required placeholder="Password" pattern="[^ $%&#]+">
+            <br>
+            <input type="button" value="Sign up" class="reg_frmbut">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+    <div class="content">
+
+    </div>
+    <footer>
+        <div style="height: 50px; background: gray;">
+
+        </div>
+    </footer>  
+    <script src="scritpt.js?v=1"></script>
+</body>
+</html>
