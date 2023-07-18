@@ -1,0 +1,97 @@
+<!-- 
+    Начало - 18.07.23, 22:43;
+    Конец - 
+ -->
+<body>
+    <input type='file' accept='text/plain' onchange='openFile(event)'><br>
+    <input id="ldBtn" type="button" value="load" onclick="loadData()">
+    <div id='output'></div>
+
+    
+
+    <script>
+        function objD (fio,mail,code) {
+            this.fio = fio
+            this.mail = mail
+            this.code = code
+        }
+        let us_data = []
+
+        var node = document.getElementById('output');
+
+        var openFile = function(event) {
+        var input = event.target;
+
+         var reader = new FileReader();
+         reader.onload = function() {
+                var text = reader.result;
+                //node.innerText = text;
+            
+                var lines = text.split('\r')
+                //--разделяем строки
+                console.log(lines.length)
+
+                for (let line = 0; line < lines.length; line++){
+                    var subline = lines[line].split('\t')
+                    //--разделяем строку
+                    let data_pack = new objD(subline[0],subline[1],subline[2])
+                    us_data.push(data_pack)
+                    // console.log("-----------")
+                    // console.log("-----Data-----")
+                    // console.log(subline)
+                    // console.log("FIO: ",subline[0]," | Mail: ",subline[1]," | Code: ",subline[2])
+                    // console.log("-----------")
+                }
+            };
+            reader.readAsText(input.files[0]);
+            console.log("Data loaded", us_data)
+        };
+        function loadData(){
+            console.log("click", us_data)
+            if (us_data.length > 0 ){
+                for (const obj in us_data){
+                    let loc_fio = us_data[obj].fio
+                    let loc_code = us_data[obj].code
+                    let loc_mail = us_data[obj].mail
+                    node.innerHTML +=   `
+                                <div class="us_item">
+                                    <p style="font-weight: bold;"> ${loc_fio}</p>
+                                    <div style="display: flex">
+                                        <label>Почта: </label>
+                                        <div style="width: fit-content;"> ${loc_mail}</div>
+                                    </div>
+                                    <div style="display: flex">
+                                        <label>УИН: </label>
+                                        <div style="width: fit-content;"> ${loc_code}</div>
+                                    </div>
+                                    
+                                </div>`
+                }
+                console.log("Data set up done")
+                document.getElementById('ldBtn').style.display = "none"
+            }
+            else{
+                console.log("Data lost")
+            }
+        }
+        
+    </script>
+    <style>
+        label{
+            margin-right: 3px;
+        }
+        .us_item{
+            width: fit-content;
+            margin-top: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            background-color: lightgray;
+            border-radius: 4px;
+        }
+        .us_item:hover{
+            background-color: rgb(194, 194, 194);
+        }
+    </style>
+</body>
